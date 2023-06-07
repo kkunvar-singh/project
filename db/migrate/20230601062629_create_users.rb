@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
     create_table :users do |t|
       t.string :first_name
       t.string :last_name
-      t.integer :mobail_number
+      t.string :mobail_number
       t.string :email
       t.string :date_of_birth
       t.string :activated, :default => "true"

@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_02_212546) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string "parmanent_address"
     t.string "residencial_address"
@@ -18,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_212546) do
     t.string "state"
     t.string "country"
     t.string "pin"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -39,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_212546) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "mobail_number"
+    t.string "mobail_number"
     t.string "email"
     t.string "date_of_birth"
     t.string "activated", default: "true"
