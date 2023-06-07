@@ -9,11 +9,12 @@ class UsersController < ApplicationController
     def search  
 
       activatedkey = params[:activatedkey].downcase
-      activated_status = activatedkey == "true" || activatedkey == "false" ?  User.where("users.activated LIKE ?",["#{activatedkey}"]) : User.all
+      activated_status = activatedkey == "true" || activatedkey == "false" ?  User.where("activated LIKE ?",["#{activatedkey}"]) : User.all
 
       if params[:key].present?
         @key = params[:key].downcase
-        @users = activated_status.joins(:address).where("addresses.city LIKE ? or users.first_name LIKE ? or users.last_name LIKE ? or users.email LIKE ? ", ["#{@key}"],["#{@key}"], ["#{@key}"],["#{@key}"])
+        @users = activated_status.joins(:address).where("city LIKE ? or first_name LIKE ? or last_name LIKE ? or email LIKE ? ", ["#{@key}"],["#{@key}"], ["#{@key}"],["#{@key}"])
+
         render "index"
         
       else
