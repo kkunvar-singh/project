@@ -20,6 +20,23 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
+
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: demo_database_4vki
+  password: G0bOHupkdqBRinQgnm5poeYHC2Ip0Pgd
+  host: dpg-ci02u1r3cv20nhr8eql0-a
+  username: demo1
+  port: 5432
+
+
+
+
+
+
+
+
+
