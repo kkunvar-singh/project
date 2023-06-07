@@ -1,0 +1,13 @@
+<% if object.errors.any? %>
+  <div class="role_errors border-2 border border-danger p-2 rounded">
+    <h6 class="bg-secondary p-2"><%= pluralize(object.errors.count, "error")%> errors, please correct errors: <h6>
+
+    <ul>
+      <% object.errors.each do |error|%>
+        <li>
+          <%= error.full_message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,118 @@
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">User Edit Registration Form</h3>     
+
+                <div class ="mb-2">
+                    <%= render "layouts/shares/errors", object: @user %>
+                </div>
+
+                <%=form_with(model: @user) do |form|%>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :First_Name,  class: "form-label"%>
+                      <%= form.text_field :first_name.downcase, class: "form-control form-control-lg"%>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Last_Name, class: "form-label"%>
+                      <%= form.text_field :last_name.downcase, class: "form-control form-control-lg"%>
+                    </div>
+
+                  </div>
+
+                  <div class = "row">
+
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Mobile_Number, class: "form-label"%>
+                      <%= form.text_field :mobail_number, class: "form-control form-control-lg"%>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Email, class: "form-label"%><br>
+                      <%= form.text_field :email.downcase, class: "form-control form-control-lg"%>
+                    </div>
+
+                  </div>
+
+                  <div class = "row">
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Date_Of_Birth, class: "form-label"%>
+                      <%= form.text_field :date_of_birth, class: "form-control form-control-lg"%>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Activated, class: "form-label"%>
+                      <%= form.text_field :activated, class: "form-control form-control-lg"%>
+                    </div>
+                  </div>
+
+                  <div class = "row">
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Password, class: "form-label"%>
+                      <%= form.text_field :password, class: "form-control form-control-lg"%>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <%= form.label :Password_Conformation, class: "form-label"%>
+                      <%= form.text_field :password_confirmation, class: "form-control form-control-lg"%>
+                    </div>
+                  </div>
+                    
+                    <%= form.fields_for :address do |address_form|%>
+                      <div class = "row">
+                        <div class="col-md-6 mb-4">
+                          <%= address_form.label :Parmanent_Address, class: "form-label"%>
+                          <%= address_form.text_field :parmanent_address, class: "form-control form-control-lg"%>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                          <%= address_form.label :Residencial_Address, class: "form-label"%>
+                          <%= address_form.text_field :residencial_address, class: "form-control form-control-lg"%>
+                        </div>
+                      </div>
+                      
+                      <div class = "row">
+                        <div class="col-md-6 mb-4">
+                          <%= address_form.label :City,  class: "form-label"%>
+                          <%= address_form.text_field :city.downcase, class: "form-control form-control-lg"%>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                          <%= address_form.label :State,  class: "form-label"%>
+                          <%= address_form.text_field :state, class: "form-control form-control-lg"%>
+                        </div>
+                      </div>
+
+                      <div class = "row">
+                        <div class="col-md-6 mb-4">
+                          <%= address_form.label :Country,  class: "form-label"%>
+                          <%= address_form.text_field :country, class: "form-control form-control-lg"%>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                          <%= address_form.label :pin,  class: "form-label"%>
+                          <%= address_form.text_field :pin, class: "form-control form-control-lg"%>
+                        </div>
+                      </div>
+
+                    <%end%>
+
+                    <div class="d-flex justify-content-center">
+                      <%= form.submit class: "btn btn-primary btn-lg" %>
+                    </div>
+              <%end%>
+
+
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

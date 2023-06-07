@@ -1,0 +1,30 @@
+<section class="vh-100 bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-start">
+
+          <div class="mb-md-5 mt-md-4 pb-5">
+            <p>Institude Name- <strong><%= @education.institude_name%></strong></p>
+            <p>University- <strong><%= @education.university%></strong></p>
+            <p>Course- <strong><%= @education.course%></strong></p>
+            <p>Stream- <strong><%= @education.stream%></strong></p>
+            <p>Passed Year- <strong><%= @education.passed_year%></strong></p>
+            <p>Marks- <strong><%= @education.marks%></strong></p>
+            <p>Parsentage- <strong><%= @education.parsentage%></strong></p>
+            <div>
+            
+            <%= link_to "Edit User Record", edit_education_path %><br>
+            <%= link_to "Back to Hoom", root_path %>
+            </div>
+
+          </div>
+             
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

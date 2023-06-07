@@ -1,0 +1,33 @@
+<section class="vh-100 bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-start">
+         
+            <div class="mb-md-5 mt-md-4 pb-5">
+              Total Users = <%=@users.count%>
+              <% @users.each do |user|%>
+                  <h3><%= link_to user.first_name, user_path(user) %></h3>
+                  <p>Role- <strong><%= user.role%></strong></p>
+                  <p>Address- <strong><%= user.address.city%></strong></p>
+                  <%= link_to "Destroy", user_path(user), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                }, class: "text-danger" %>
+              <%end%>
+              
+              <div>
+                  
+                  <%= link_to "Back to Hoom", root_path %>
+              </div>
+
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

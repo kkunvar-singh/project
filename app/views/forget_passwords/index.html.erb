@@ -1,0 +1,14 @@
+<div class='d-flex justify-content-center align-items-center my-4 bg-danger'>
+  <h1 class='p-2 text center text-white'>RESET PASSWORD PAGE </h1>
+</div>
+
+<%= form_with url: forget_passwords_path, html: {class: 'w-100 d-flex justify-content-center align-items-center row'} do |form| %>
+ <div class="form-group row justify-content-center">
+  <%= form.label :email, "Enter the Your Register mail", class: 'text-center p-2 text-secondary' %>
+  <%= form.text_field :email, class: 'w-25 form-control', required: true %> 
+
+  <div class="text-center">
+    <%= form.submit "Submit", class: 'my-2 w-25 btn btn-primary justify-content-center' %>
+  </div>
+</div>
+<% end %>

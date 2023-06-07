@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            min-width: 1000px;
+            overflow: auto;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8" style="margin-top: 50px;">
+            <div class="border-bottom">
+                <a href="" class="font-weight-bold" style="font-size: 1.4em; color: #00466a; text-decoration: none;">S.K-Project</a>
+            </div>
+            <p style="font-size: 1.1em;">Hi, <%= @user.first_name %></p>
+            <p>Thank you for choosing S.K-Project. Use the following OTP to complete your Sign Up procedures.</p>
+            <h2 class="bg-primary text-white text-center py-2 px-4 rounded"> <a class="text-danger text-center" href="<%= verify_otps_url(otp: @otp) %>"> <%= @otp %> </a></h2>
+            <p style="font-size: 0.9em;">Regards,<br />KUNVAR SINGH</p>
+            <hr class="border-top-0 border-bottom" />
+            <div class="float-right text-muted small">
+              <p>CREATED BY - </p> <strong> KUNVAR SINGH </strong>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
