@@ -8,10 +8,10 @@ class VerifyOtpsController < ApplicationController
     otp_response = ::OtpEncDec.call('match_otp', otp)
     if otp_response[:valid]
       update_user_otp_nil(otp_response[:user])
-      redirect_to new_session_path and return
+      redirect_to new_session_path, generate_message(otp_response[:valid], 'create')  and return
     end
      
-    redirect_to otp_response[:redirect_path], generate_message(otp_response[:valid], 'create') 
+    redirect_to otp_response[:redirect_path]
   end
 
   def new_password
